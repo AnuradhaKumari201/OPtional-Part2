@@ -1,3 +1,4 @@
+
 package com.knoldus;
 
 import java.util.HashMap;
@@ -6,27 +7,23 @@ import java.util.Optional;
 
 
 public class PhoneBook {
-
     /**
      * Created map with name and phoneNumber as a key-value pair.
      * @return
      */
-
-       public final Map<String, String> map = new HashMap<String, String>();
+       private static final Map<String, String> map = new HashMap<String, String>();
         {
             map.put("Anuradha", "123456");
             map.put("Priya", "879659");
             map.put("karishma", "78965");
         }
-
-
-
-    PhoneBook() {
-
-
+    /**
+     *
+     * @return map
+     */
+    public   Map<String, String> getMap() {
+       return map;
     }
-
-
     //Exercise-1
     /**
      * @param name
@@ -36,8 +33,6 @@ public class PhoneBook {
 
         return Optional.ofNullable(map.get(name));
     }
-
-
     /**
      * @param phoneNumber
      * @return name from phoneNumber
@@ -49,8 +44,6 @@ public class PhoneBook {
             }
         }
         return Optional.empty();
-
-
      }
 
     /**

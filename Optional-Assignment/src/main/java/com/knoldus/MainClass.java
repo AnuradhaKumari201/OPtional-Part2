@@ -1,11 +1,11 @@
+
 package com.knoldus;
 
 import java.util.logging.Logger;
 
-public class MainClass {
+ public class MainClass {
 
     /**
-     *
      * @param args
      */
     public static void main(String args[]) {
@@ -13,10 +13,10 @@ public class MainClass {
         PhoneBook phoneBook = new PhoneBook();
         //Exercise-1
         Logger logger = Logger.getLogger(MainClass.class.getName());
-        logger.info(String.valueOf(phoneBook.findPhoneByName("Anuradha")));
+        logger.info(String.valueOf(phoneBook.findPhoneByName("karishma")));
 
 
-        PhoneBookCrawler phoneBookCrawler = new PhoneBookCrawler(new PhoneBook());
+        PhoneBookCrawler phoneBookCrawler = new PhoneBookCrawler();
 
         // Exercise-2
         logger.info(String.valueOf(phoneBookCrawler.findPhoneByNameAndPunishifNothingFound("Priya")));
@@ -32,7 +32,7 @@ public class MainClass {
 
         //Exercise-4
 
-       logger.info(String.valueOf(phoneBookCrawler.checkPhoneByNameAndPrintHelloifNothingFound("Anuradha")));
+       logger.info(String.valueOf(phoneBookCrawler.checkPhoneByNameAndPrintHelloifNothingFound("Priya")));
 
 
 
@@ -50,9 +50,7 @@ public class MainClass {
 
         //Exercise-7
         logger.info(String.valueOf(phoneBook.findNameByPhoneNumber("123456")));
-        logger.info(String.valueOf(phoneBookCrawler.findPhoneNumberByNameOrNameByPhoneNumber("Meera","78965")));
-
-
+        logger.info(String.valueOf(phoneBookCrawler.findPhoneNumberByNameOrNameByPhoneNumber("Meera", "78965")));
 
 
     }

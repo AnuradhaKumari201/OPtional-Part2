@@ -3,24 +3,16 @@ package com.knoldus;
 
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.lang.reflect.*;
 
+import static com.knoldus.PhoneBook.*;
 
 
 public class PhoneBookCrawler {
 
-    /**
-     *
-     */
-    private PhoneBook phoneBook;
 
+    public PhoneBookCrawler() {
 
-    /**
-     *
-     * @param phoneBook
-     */
-    public PhoneBookCrawler(final PhoneBook phoneBook) {
-
-        this.phoneBook = phoneBook;
     }
 
     /**
@@ -44,6 +36,7 @@ public class PhoneBookCrawler {
      * */
     public String findPhoneByNameAndPrintPhoneBookifNothingFound(final String name) {
 
+      PhoneBook phoneBook = new PhoneBook();
         return phoneBook.findPhoneByName(name).orElseGet(() -> phoneBook.toString());
 
     }
@@ -58,6 +51,7 @@ public class PhoneBookCrawler {
 
     boolean checkHelloMessage() {
 
+        PhoneBook phoneBook = new PhoneBook();
         return phoneBook.toString().equals("Hello");
     }
 
@@ -69,6 +63,7 @@ public class PhoneBookCrawler {
     public String checkPhoneByNameAndPrintHelloifNothingFound(final String name) {
 
         if (checkHelloMessage()) {
+            PhoneBook phoneBook = new PhoneBook();
 
             return phoneBook.findPhoneByName(name).orElseGet(() -> phoneBook.toString());
         }
@@ -89,7 +84,7 @@ public class PhoneBookCrawler {
     public String findPhoneByNameAndPunishifNothingFoundUsingStream(final String name) {
 
         PhoneBook ph = new PhoneBook();
-        String result = ph.map.entrySet().stream().filter(map -> name.equals(map.getKey())).map(i -> i.getValue()).collect(Collectors.joining());
+        String result = ph.getMap().entrySet().stream().filter(map -> name.equals(map.getKey())).map(i -> i.getValue()).collect(Collectors.joining());
          return result.equals("") ?  "Phone number is not found" : result;
 
     }
@@ -104,7 +99,8 @@ public class PhoneBookCrawler {
      */
     public String findPhoneByNameAndPrintPhoneBookifNothingFoundUsingStream(final String name) {
 
-       String result = phoneBook.map.entrySet().stream().filter(map -> name.equals(map.getKey())).map(i -> i.getValue()).collect(Collectors.joining());
+        PhoneBook phoneBook = new PhoneBook();
+       String result = phoneBook.getMap().entrySet().stream().filter(map -> name.equals(map.getKey())).map(i -> i.getValue()).collect(Collectors.joining());
         return result.equals("") ? phoneBook.toString(): result;
     }
 
@@ -119,9 +115,9 @@ public class PhoneBookCrawler {
 
     public Optional<String> findPhoneNumberByNameOrNameByPhoneNumber(final String name, final String phoneNumber) {
 
+        PhoneBook phoneBook = new PhoneBook();
         Optional<String> s = phoneBook.findPhoneByName(name);
          return s.isPresent() ?  s : phoneBook.findNameByPhoneNumber(phoneNumber);
-
      }
 
 
@@ -133,6 +129,7 @@ public class PhoneBookCrawler {
 
     @Override
     public String toString() {
+        PhoneBook phoneBook = new PhoneBook();
         return "PhoneBookCrawler{"
                 +
                 "phoneBook=" + phoneBook
