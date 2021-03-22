@@ -67,12 +67,8 @@ public class PhoneBookCrawlerTest {
     public void findPhoneByNameAndPrintPhoneBookifNothingFoundUsingStream(){
         PhoneBookCrawler obj = new PhoneBookCrawler(new PhoneBook());
         Assert.assertEquals("123456", obj.findPhoneByNameAndPrintPhoneBookifNothingFoundUsingStream("Anuradha"));
+        Assert.assertEquals("PhoneBook{map={Anuradha=123456, Priya=879659, karishma=78965}}",obj.findPhoneByNameAndPrintPhoneBookifNothingFoundUsingStream("Rupa"));
     }
-   /* @Test
-    public void findByNameAndPrintPhoneBookifNothingFoundUsingStream(){
-        PhoneBookCrawler obj = new PhoneBookCrawler(new PhoneBook());
-        Assert.assertEquals("PhoneBook{map={Anuradha=123456, Priya=879659, karishma=78965}}", obj.findPhoneByNameAndPrintPhoneBookifNothingFoundUsingStream(""));
-    } */
 
     //Exercise-7
     @Test

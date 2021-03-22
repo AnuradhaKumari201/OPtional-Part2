@@ -9,13 +9,17 @@ public class PhoneBook {
 
     /**
      * Created map with name and phoneNumber as a key-value pair.
+     * @return
      */
-   public final   Map<String, String> map = new HashMap<String, String>();
-    {
-        map.put("Anuradha", "123456");
-        map.put("Priya", "879659");
-        map.put("karishma", "78965");
-    }
+
+       public final Map<String, String> map = new HashMap<String, String>();
+        {
+            map.put("Anuradha", "123456");
+            map.put("Priya", "879659");
+            map.put("karishma", "78965");
+        }
+
+
 
     PhoneBook() {
 

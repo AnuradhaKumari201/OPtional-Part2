@@ -103,7 +103,9 @@ public class PhoneBookCrawler {
      * @return phoneNumber and else PhoneBook
      */
     public String findPhoneByNameAndPrintPhoneBookifNothingFoundUsingStream(final String name) {
-        return phoneBook.map.entrySet().stream().filter(map -> name.equals(map.getKey())).map(i -> i.getValue()).collect(Collectors.joining());
+
+       String result = phoneBook.map.entrySet().stream().filter(map -> name.equals(map.getKey())).map(i -> i.getValue()).collect(Collectors.joining());
+        return result.equals("") ? phoneBook.toString(): result;
     }
 
     //Exercise-7
